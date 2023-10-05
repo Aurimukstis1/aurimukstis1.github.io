@@ -1,0 +1,44 @@
+:root {
+    --shade1 : #0099ff;
+    --shade2 : #007acc;
+    --shade3 : #005c99;
+    --shade4 : #003d66;
+    --shade5 : #001f33;
+
+    --matte1   : rgb(10,10,10);
+    --matte2   : rgb(20,20,20);
+    --matte3   : rgb(30,30,30);
+    --matte4   : rgb(40,40,40);
+    --matte5   : rgb(50,50,50);
+    --matte6   : rgb(60,60,60);
+    --matte7   : rgb(70,70,70);
+    --matte8   : rgb(80,80,80);
+    --matte9   : rgb(90,90,90);
+}
+
+body {
+    display: block;
+    margin: 0px;
+    background-color: var(--matte1);
+    height: 10000px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.container-topheader {
+    background-color: var(--matte2);
+    width: 100%;
+    height: 200px;
+    text-align: center
+}
+
+.topheader-text {
+    font-size: 150px;
+    letter-spacing: -1px;
+    font-weight: 7000;
+    font-family: 'Inter', sans-serif;
+    color: rgb(231, 231, 231);
+    margin: 0;
+}
