@@ -6,12 +6,102 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles.css">
     <title>My Website</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Get all the navigation links
+        var navLinks = document.querySelectorAll('.container-topheader-sticky a');
+
+        // Attach click event listeners to each link
+        navLinks.forEach(function(link) {
+          link.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default behavior of the link
+
+            // Get the target section from the link's href attribute
+            var targetSection = document.querySelector(link.getAttribute('href'));
+
+            // Scroll to the target section with smooth behavior
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+          });
+        });
+      });
+    </script>
   </head>
   <body>
     <main>
+
       <div class="container-topheader">
         <h1 class="topheader-text">Aurimukstis1</h1>
       </div>
+
+      <div class="container-topheader-sticky">
+        <a href="#aboutme">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <section id="aboutme">
+        <h1 class="aboutme-title"> About me </h1>
+        <article>
+          <img src="" alt="">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quod voluptas natus
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quod voluptas natus
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quod voluptas natus
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quod voluptas natus
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quod voluptas natus
+          </p>
+        </article>
+      </section>
+
+      <section id="projects" class="project-grid">
+        <h1 class="project-title"> Projects </h1>
+
+        <div class="projects-container">
+
+          <article class="project-card">
+            <img src="project1.jpg" alt="Project 1">
+            <h2>Project 1</h2>
+            <p>Description of Project 1.</p>
+          </article>
+
+          <article class="project-card">
+            <img src="project2.jpg" alt="Project 2">
+            <h2>Project 2</h2>
+            <p>Description of Project 2.</p>
+          </article>
+
+          <article class="project-card">
+            <img src="project3.jpg" alt="Project 3">
+            <h2>Project 3</h2>
+            <p>Description of Project 3.</p>
+          </article>
+
+          <article class="project-card">
+            <img src="project4.jpg" alt="Project 4">
+            <h2>Project 4</h2>
+            <p>Description of Project 4.</p>
+          </article>
+
+          <article class="project-card">
+            <img src="project5.jpg" alt="Project 5">
+            <h2>Project 5</h2>
+            <p>Description of Project 5.</p>
+          </article>
+
+          <article class="project-card">
+            <img src="project6.jpg" alt="Project 6">
+            <h2>Project 6</h2>
+            <p>Description of Project 6.</p>
+          </article>
+
+        </div>
+
+      </section>
+
+      <section id="contact">
+        <h1 class="contact-title"> Contact </h1>
+      </section>
+
     </main>
   </body>
 </html>
