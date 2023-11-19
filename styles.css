@@ -14,6 +14,7 @@
     --matte7   : rgb(70,70,70);
     --matte8   : rgb(80,80,80);
     --matte9   : rgb(90,90,90);
+    --mgray    : rgb(100,100,100);
 }
 
 body {
@@ -21,6 +22,16 @@ body {
     margin: 0px;
     background-color: var(--matte1);
     height: 10000px;
+
+    --dot-bg: black;
+    --dot-color: var(--mgray);
+    --dot-size: 1px;
+    --dot-space: 22px;
+    
+    background:
+        linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+        linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+        var(--dot-color);
 }
 
 ::-webkit-scrollbar {
