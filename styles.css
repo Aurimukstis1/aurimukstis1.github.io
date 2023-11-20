@@ -34,10 +34,12 @@ body {
         var(--dot-color);
 }
 
+
 /* the scrollbar on the right.. begone */
 ::-webkit-scrollbar {
     display: none;
 }
+
 
 /* PRIMARY HEADER */
 .container-topheader {
@@ -46,47 +48,45 @@ body {
     height: 200px;
     text-align: center
 }
+    .topheader-text {
+        font-size: 150px;
+        letter-spacing: -1px;
+        font-weight: 7000;
+        font-family: 'Inter', sans-serif;
+        color: rgb(231, 231, 231);
+        margin: 0;
+    }
 
-.topheader-text {
-    font-size: 150px;
-    letter-spacing: -1px;
-    font-weight: 7000;
-    font-family: 'Inter', sans-serif;
-    color: rgb(231, 231, 231);
-    margin: 0;
-}
 
 /* STICKY HEADER */
 .container-topheader-sticky {
     height: 50px;
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    padding: 10px 0px 10px;
+    justify-content: center;
     align-items: center;
     background-color: var(--matte1);
-    padding: 10px;
+    gap: 30px;
     position: sticky;
     top: 0;
     z-index: 100; /* Ensure the header appears above other elements */
 }
+    .container-topheader-sticky a {
+        text-decoration: none;
+        color: white; /* text color */
+        transition: all 0.1s ease-in-out;
+    }
 
-.container-topheader-sticky a {
-    text-decoration: none;
-    color: white; /* text color */
-    padding: 0px 20px; /* padding for button spacing */
-    transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
-    font-size: 60px;
-    letter-spacing: -1px;
-    font-weight: 700;
-    font-family: 'Inter', sans-serif;
-}
+    .container-topheader-sticky a:hover {
+        transition: all 0.1s ease-in-out;
+        transform: scale(1.25);
+        cursor: pointer;
+    }
 
-.container-topheader-sticky a:hover {
-    background-color: var(--matte3);
-}
 
 /* SECTIONS */
-.aboutme-title, .project-title, .contact-title, .skills-title {
+.aboutme-title, .project-title, .contact-title, .skills-title, .photography-title {
     text-align: center;
     margin-bottom: 20px;
     color: white;
@@ -95,122 +95,164 @@ body {
     font-weight: 700;
     font-family: 'Inter', sans-serif;
 }
+    section article {
+        text-align: center;
+        color: white;
+    }
 
-section article {
-    text-align: center;
-    color: white;
-}
+    section article p {
+        margin-bottom: 10px;
+        text-align: center;
+        
+    }
 
-section article p {
-    margin-bottom: 10px;
-    text-align: center;
-    
-}
 
-/* GRID PROEJCTS */
-.project-grid {
-    text-align: center;
-}
-  
+/* PROEJCTS */
 .projects-container {
     max-width: 1200px; /* Adjust this to your desired max width */
     margin: 0 auto; /* Center the grid horizontally */
-    padding: 20px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Display 3 cards per line */
-    gap: 20px;
-}
-  
-.project-card {
-    width: 100%;
-    max-width: 400px; /* Adjust this to control the maximum width of each project card */
-    border: 1px solid #ddd;
+    grid-template-columns: repeat(3,auto); /* Display 3 cards per line */
+    gap: 10px;
+    border: 1px solid black;
     border-radius: 2px;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.1s ease-in-out;
-    background-color: var(--matte1);
 }
+    .project-card {
+        width: 100%;
+        height: 600px;
 
-.project-card:hover {
-    transition: all 0.1s ease-in-out;
-    transform: scale(1.02);
-    cursor: pointer;
-}
-  
-.project-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border: 1px solid #ddd;
-}
-  
-.project-card a {
-    padding: 10px;
-    color: white;
-    font-size: 30px;
-    font-weight: 700;
-    font-family: 'Inter', sans-serif;
-}
+        transition: all 0.1s ease-in-out;
+        background-color: var(--matte1);
+    }
 
-.project-card p {
-    padding: 10px;
-    color: white;
-    font-size: 20px;
-    font-weight: 700;
-    font-family: 'Inter', sans-serif;
-}
+    .project-card:hover {
+        transition: all 0.1s ease-in-out;
+        transform: scale(1.02);
+        cursor: pointer;
+    }
+    
+    .project-card img {
+        width: 100%;
+        height: 600px;
+        object-fit: cover;
+    }
+
+    .project-card a {
+        color: white;
+        font-size: 30px;
+        font-weight: 700;
+        font-family: 'Inter', sans-serif;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .project-card p {
+        color: white;
+        font-size: 20px;
+        font-weight: 700;
+        font-family: 'Inter', sans-serif;
+        opacity: 0;
+    }
+
+    .project-card:hover a, .project-card:hover p {
+        opacity: 1;
+        transition: opacity 0.3s;
+    }
 
 /* CONTACT */
 .contact-cards {
     margin: 0 auto; /* Center the cards */
 }
+    .contact-card {
+        width: 84px;
+        height: 84px;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+        padding: 10px;
+        margin: 0 auto; /* Center the cards */
+    }
 
-.contact-card {
-    width: 84px;
-    height: 84px;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-    padding: 10px;
-    margin: 0 auto; /* Center the cards */
-}
+    .contact-card:hover {
+        transform: scale(1.05);
+    }
 
-.contact-card:hover {
-    transform: scale(1.05);
-}
+    .contact-card img {
+        width: 84px;
+        height: 84px;
+        object-fit: fill;
+    }
 
-.contact-card img {
-    width: 84px;
-    height: 84px;
-    object-fit: fill;
-}
 
 /* SKILLS */
-.skill-cards {
-    margin: 0 auto;
-}
-
-.skill-cards p {
+.skills-container p {
     text-align: center;
     color: white;
 }
+    .skills-classes {
+        max-width: 350px; /* Adjust this to your desired max width */
+        margin: 0 auto; /* Center the grid horizontally */
+        display: grid;
+        grid-template-columns: repeat(3,auto); /* Display 3 cards per line */
+    }
 
-.skill-card {
-    width: 84px;
+    .skill-card {
+        width: 84px;
+        height: 84px;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+        padding: 10px;
+        margin: 0 auto; /* Center the cards */
+    }
+
+    .skill-card img {
+        width: 84px;
+        height: 84px;
+        object-fit: fill;
+    }
+
+    .skill-card:hover {
+        transform: scale(1.05);
+    }
+
+
+
+/* ABOUT ME */
+.profile-pic {
     height: 84px;
-    cursor: pointer;
+    width: 84px;
+    border-radius: 100%;
     transition: transform 0.3s ease-in-out;
-    padding: 10px;
-    margin: 0 auto; /* Center the cards */
 }
+    .profile-pic:hover {
+        transform: scale(1.05);
+    }
 
-.skill-card:hover {
-    transform: scale(1.05);
+
+/* PHOTOGRAPHY */
+.photography-container {
+    max-width: 1500px; /* Adjust this to your desired max width */
+    margin: 0 auto; /* Center the grid horizontally */
+    display: grid;
+    grid-template-columns: repeat(3,auto); /* Display 3 cards per line */
+    gap: 10px;
 }
+    .photography-box {
+        /* Adjust this to control the maximum width of each project card */
+        border: 1px solid black;
+        border-radius: 2px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.1s ease-in-out;
+        background-color: black;
+    }
 
-.skill-card img {
-    width: 84px;
-    height: 84px;
-    object-fit: fill;
-}
+    .photography-box:hover {
+        transition: all 0.1s ease-in-out;
+        transform: scale(1.1);
+        cursor: pointer;
+    }
 
+    .photography img {
+        width: 100%;
+        height: 100%;
+    }
