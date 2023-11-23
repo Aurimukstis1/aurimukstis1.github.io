@@ -5,26 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles.css">
-    <title>My Website</title>
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        // Get all the navigation links
-        var navLinks = document.querySelectorAll('.container-topheader-sticky a');
-
-        // Attach click event listeners to each link
-        navLinks.forEach(function(link) {
-          link.addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent the default behavior of the link
-
-            // Get the target section from the link's href attribute
-            var targetSection = document.querySelector(link.getAttribute('href'));
-
-            // Scroll to the target section with smooth behavior
-            targetSection.scrollIntoView({ behavior: 'smooth' });
-          });
-        });
-      });
-    </script>
+    <title>Aurimukstis1</title>
+    <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon"/>
+    <script src="script.js" defer></script>
   </head>
   <body>
     <main>
@@ -34,6 +17,12 @@
       </div>
 
       <div class="container-topheader-sticky">
+
+        <div class="left-content">
+          <img src="profile-logo.png" id="sticky-logo">
+          <h2 id="sticky-name">Aurimukstis1</h2>
+        </div>
+
         <a href="#aboutme">
           <img src="svg/user.svg" alt="aboutme">
         </a>
@@ -43,16 +32,29 @@
         <a href="#projects">
           <img src="svg/folder.svg" alt="projects">
         </a>
+        <a href="#blogs">
+          <img src="svg/edit-3.svg" alt="blogs">
+        </a>
         <a href="#photography">
           <img src="svg/camera.svg" alt="photography">
         </a>
         <a href="#contact">
           <img src="svg/mail.svg" alt="contact">
         </a>
+        <a href="/commits/commits.html" alt="commits">
+          <img src="svg/git-pull-request.svg" alt="commits">
+        </a>
+
+        <div class="right-content">
+          <a href="/documentation/documentation.html">
+            <img src="svg/code.svg" id="sticky-logo-code">
+          </a>
+        </div>
+
       </div>
 
       <section id="aboutme" class="aboutme">
-        <h1 class="aboutme-title">About Me</h1>
+        <h1 class="aboutme-title">- About Me -</h1>
 
         <article>
           <img src="profile-logo.png" alt="" class="profile-pic">
@@ -102,7 +104,7 @@
       </section>
 
       <section id="projects" class="projects">
-        <h1 class="project-title"> Projects </h1>
+        <h1 class="project-title">- Projects -</h1>
 
         <div class="projects-container">
 
@@ -127,8 +129,32 @@
         </div>
       </section>
 
+      <section class="blogs" id="blogs">
+        <h1 class="blogs-title">- Blogs -</h1>
+
+        <div class="blogs-container">
+
+          <article class="blogs-card">
+            <a href="blogs/blogpost1.html">
+                <h2 class="blogs-header">Lorem Ipsum</h2>
+                <img src="ilya-pavlov-OqtafYT5kTw-unsplash.jpg" alt="image">
+                <p>Photo by: Ilya Pavlov</p>
+            </a>
+          </article>
+
+          <article class="blogs-card">
+            <a href="blogs/blogpost2.html">
+              <h2 class="blogs-header">Lorem Ipsum</h2>
+              <img src="photography/IMG_20200920_043426.jpg" alt="image">
+              <p>Photo by: Aurimukstis1</p>
+            </a>
+          </article>
+          
+        </div>
+      </section>
+
       <section id="photography" class="photography">
-        <h1 class="photography-title">Photography</h1>
+        <h1 class="photography-title">- Photography -</h1>
 
         <div class="photography-container">
 
@@ -159,12 +185,6 @@
           <div class="photography-box">
             <img src="photography/IMG_20210812_231838.jpg" alt="Photo">
           </div>
-          <div class="photography-box">
-            <img src="photography/IMG_20210812_231949.jpg" alt="Photo">
-          </div>
-          <div class="photography-box">
-            <img src="photography/IMG_20220611_233053_1~2 (1).jpg" alt="Photo">
-          </div>
 
         </div>
       </section>
@@ -173,10 +193,6 @@
         <h1 class="contact-title"> Contact </h1>
 
         <div class="contact-cards">
-
-          <div class="contact-card" onclick="window.location.href='https://discordapp.com/users/350352717895696384';">
-            <img src="discord-logo.png" alt="Discord Logo">
-          </div>
 
           <div class="contact-card" onclick="window.location.href='https://www.reddit.com/user/Aurimukstis1/';">
             <img src="reddit-logo.png" alt="Reddit Logo">

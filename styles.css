@@ -21,7 +21,6 @@ body {
     display: block;
     margin: 0px;
     background-color: var(--matte1);
-    height: 2780px;
 
     --dot-bg: black;
     --dot-color: var(--mgray);
@@ -77,23 +76,45 @@ body {
         color: white; /* text color */
         transition: all 0.1s ease-in-out;
     }
-
     .container-topheader-sticky a:hover {
         transition: all 0.1s ease-in-out;
         transform: scale(1.25);
         cursor: pointer;
     }
-
+    .container-topheader-sticky .left-content {
+        position: absolute;
+        left: 10px;
+        display: flex;
+        align-items: center;
+    }
+    .container-topheader-sticky .left-content #sticky-logo {
+        width: 48px;
+        height: 48px;
+    }
+    .container-topheader-sticky #sticky-name {
+        color: white;
+        font-size: 24px;
+        margin-left: 10px;
+        letter-spacing: -1px;
+        font-weight: 1000;
+        font-family: 'outfit', sans-serif;
+    }
+    .container-topheader-sticky .right-content {
+        position: absolute;
+        right: 32px;
+        display: flex;
+        align-items: center;
+    }
 
 /* SECTIONS */
-.aboutme-title, .project-title, .contact-title, .skills-title, .photography-title {
+.aboutme-title, .project-title, .contact-title, .skills-title, .photography-title, .blogs-title {
     text-align: center;
     margin-bottom: 20px;
     color: white;
-    font-size: 60px;
+    font-size: 80px;
     letter-spacing: -1px;
     font-weight: 700;
-    font-family: 'Inter', sans-serif;
+    font-family: 'outfit', sans-serif;
 }
     section article {
         text-align: center;
@@ -103,16 +124,62 @@ body {
     section article p {
         margin-bottom: 10px;
         text-align: center;
-        
+    }
+
+    .skills-title {
+        font-size: 40px;
+    }
+
+/* ABOUT ME */
+.profile-pic {
+    height: 84px;
+    width: 84px;
+    border-radius: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+    .profile-pic:hover {
+        transform: scale(1.05);
+    }
+
+
+/* SKILLS */
+.skills-container p {
+    text-align: center;
+    color: white;
+}
+    .skills-classes {
+        max-width: 350px; /* Adjust this to your desired max width */
+        margin: 0 auto; /* Center the grid horizontally */
+        display: grid;
+        grid-template-columns: repeat(3,auto); /* Display 3 cards per line */
+    }
+
+    .skill-card {
+        width: 84px;
+        height: 84px;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+        padding: 10px;
+        margin: 0 auto; /* Center the cards */
+    }
+
+    .skill-card img {
+        width: 84px;
+        height: 84px;
+        object-fit: fill;
+    }
+
+    .skill-card:hover {
+        transform: scale(1.05);
     }
 
 
 /* PROEJCTS */
 .projects-container {
-    max-width: 1200px; /* Adjust this to your desired max width */
-    margin: 0 auto; /* Center the grid horizontally */
+    max-width: 1200px;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3,auto); /* Display 3 cards per line */
+    grid-template-columns: repeat(3,auto);
     gap: 10px;
     border: 1px solid black;
     border-radius: 2px;
@@ -166,75 +233,83 @@ body {
         transition: opacity 0.3s;
     }
 
-/* CONTACT */
-.contact-cards {
-    margin: 0 auto; /* Center the cards */
+
+/* BLOG */
+.blogs-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    /* grid-template-columns: repeat(2,auto); */
+    gap: 10px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 2px;
 }
-    .contact-card {
-        width: 84px;
-        height: 84px;
-        cursor: pointer;
-        transition: transform 0.3s ease-in-out;
+    .blogs-card {
+        height: auto;
+        transition: all 0.1s ease-in-out;
+        background-color: var(--matte1);
+        border: 1px solid rgb(25, 25, 25);
+        border-radius: 2px;
+    }
+    
+    .blogs-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        transition: all 0.1s ease-in-out;
+    }
+
+    .blogs-card:hover img {
+        transform: scale(0.99);
+        transition: all 0.1s ease-in-out;
+    }
+
+    .blogs-card h2 {
+        color: white;
+        font-size: 40px;
+        font-weight: 1000;
+        font-family: 'Inter', sans-serif;
+        top: -20%;
+        margin-left: 10px;
+        position: absolute;
+        z-index: 1;
+        opacity: 0.5;
+    }
+  
+    .blogs-card a {
+        display: block;
+        position: relative;
+        text-decoration: none;
+    }
+
+    .blogs-card p {
+        color: whitesmoke;
+        font-size: 10px;
+        font-weight: 200;
+        font-family: 'Inter', sans-serif;
+        text-align: left;
+        margin-left: 20px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.3); /* semi-transparent black background */
         padding: 10px;
-        margin: 0 auto; /* Center the cards */
+        margin: 0;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 0.1s ease-in-out;
     }
 
-    .contact-card:hover {
-        transform: scale(1.05);
+    .blogs-card:hover p {
+        opacity: 1;
+        transition: opacity 0.1s ease-in-out;
     }
 
-    .contact-card img {
-        width: 84px;
-        height: 84px;
-        object-fit: fill;
+    .blogs-card:hover h2 {
+        opacity: 1;
+        transition: opacity 0.1s ease-in-out;
     }
-
-
-/* SKILLS */
-.skills-container p {
-    text-align: center;
-    color: white;
-}
-    .skills-classes {
-        max-width: 350px; /* Adjust this to your desired max width */
-        margin: 0 auto; /* Center the grid horizontally */
-        display: grid;
-        grid-template-columns: repeat(3,auto); /* Display 3 cards per line */
-    }
-
-    .skill-card {
-        width: 84px;
-        height: 84px;
-        cursor: pointer;
-        transition: transform 0.3s ease-in-out;
-        padding: 10px;
-        margin: 0 auto; /* Center the cards */
-    }
-
-    .skill-card img {
-        width: 84px;
-        height: 84px;
-        object-fit: fill;
-    }
-
-    .skill-card:hover {
-        transform: scale(1.05);
-    }
-
-
-
-/* ABOUT ME */
-.profile-pic {
-    height: 84px;
-    width: 84px;
-    border-radius: 100%;
-    transition: transform 0.3s ease-in-out;
-}
-    .profile-pic:hover {
-        transform: scale(1.05);
-    }
-
-
+    
 /* PHOTOGRAPHY */
 .photography-container {
     max-width: 1500px; /* Adjust this to your desired max width */
@@ -262,4 +337,28 @@ body {
     .photography img {
         width: 100%;
         height: 100%;
+    }
+
+
+/* CONTACT */
+.contact-cards {
+    margin: 0 auto; /* Center the cards */
+}
+    .contact-card {
+        width: 84px;
+        height: 84px;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+        padding: 10px;
+        margin: 0 auto; /* Center the cards */
+    }
+
+    .contact-card:hover {
+        transform: scale(1.05);
+    }
+
+    .contact-card img {
+        width: 84px;
+        height: 84px;
+        object-fit: fill;
     }
