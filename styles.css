@@ -343,6 +343,10 @@ body {
 /* CONTACT */
 .contact-cards {
     margin: 0 auto; /* Center the cards */
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    justify-content: center;
+    align-items: center;
 }
     .contact-card {
         width: 84px;
@@ -350,7 +354,6 @@ body {
         cursor: pointer;
         transition: transform 0.3s ease-in-out;
         padding: 10px;
-        margin: 0 auto; /* Center the cards */
     }
 
     .contact-card:hover {
@@ -361,4 +364,21 @@ body {
         width: 84px;
         height: 84px;
         object-fit: fill;
+    }
+
+.bottom-header {
+    position: absolute;
+    height: 80px;
+    color: white;
+    background-color: var(--matte1);
+    width: 100%;
+}
+    .bottom-header-text {
+        color: var(--matte2);
+        font-size: 20px;
+        font-weight: 700;
+        font-family: 'Inter', sans-serif;
+        text-align: left;
+        margin-left: 10px;
+        margin-top: 10px;
     }
