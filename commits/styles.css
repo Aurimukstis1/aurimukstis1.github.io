@@ -106,6 +106,16 @@ body {
     }
 
 
+.commits-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 80px;
+    letter-spacing: -1px;
+    font-weight: 700;
+    font-family: 'outfit', sans-serif;
+}
+
 /* COMMITS */
 .commits-container {
     max-width: 800px;
