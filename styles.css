@@ -390,6 +390,16 @@ body {
         height: 100%;
     }
 
+@media only screen and (max-width: 1024px) {
+    .photography-container {
+        grid-template-columns: repeat(2,auto);
+    }
+} 
+@media only screen and (max-width: 620px) {
+    .photography-container {
+        grid-template-columns: repeat(1,auto);
+    }
+} 
 
 /* CONTACT */
 .contact-cards {

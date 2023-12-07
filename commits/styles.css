@@ -55,6 +55,19 @@ body {
         margin: 0;
     }
 
+@media only screen and (max-width: 1024px) {
+    .topheader-text {
+        font-size: 100px;
+    }
+} 
+@media only screen and (max-width: 620px) {
+    .topheader-text {
+        font-size: 60px;
+    }
+    .container-topheader {
+        height: 80px;
+    }
+} 
 
 /* STICKY HEADER */
 .container-topheader-sticky {
@@ -105,6 +118,19 @@ body {
         align-items: center;
     }
 
+@media only screen and (max-width: 1024px) {
+    .container-topheader-sticky #sticky-name {
+        display: none;
+    }
+} 
+@media only screen and (max-width: 620px) {
+    .container-topheader-sticky .right-content {
+        display: none;
+    }
+    .container-topheader-sticky .left-content {
+        display: none;
+    }
+} 
 
 .commits-title {
     text-align: center;
@@ -116,6 +142,17 @@ body {
     font-family: 'outfit', sans-serif;
 }
 
+@media only screen and (max-width: 1024px) {
+    .commits-title {
+        font-size: 60px;
+    }   
+} 
+@media only screen and (max-width: 620px) {
+    .commits-title {
+        font-size: 40px;
+    }  
+}
+
 /* COMMITS */
 .commits-container {
     max-width: 800px;
@@ -125,6 +162,8 @@ body {
     gap: 10px;
     border: 1px solid rgb(0, 0, 0);
     border-radius: 2px;
+    justify-content: center;
+    align-items: center;
 }
     a {
         text-decoration: none;
@@ -169,3 +208,15 @@ body {
         text-align: left;
         margin-left: 5px;
     }
+
+@media only screen and (max-width: 1024px) {
+    .commits-card {
+        font-size: 16px;
+    }
+} 
+@media only screen and (max-width: 620px) {
+    .commits-card {
+        font-size: 16px;
+        max-width: 300px;
+    }
+} 
