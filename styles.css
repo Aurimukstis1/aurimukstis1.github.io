@@ -417,6 +417,29 @@ body {
         object-fit: fill;
     }
 
+@media only screen and (max-width: 1024px) {
+    .contact-card {
+        width: 64px;
+        height: 64px;
+    }
+    .contact-card img {
+        width: 64px;
+        height: 64px;
+        object-fit: fill;
+    }
+} 
+@media only screen and (max-width: 620px) {
+    .contact-card {
+        width: 32px;
+        height: 32px;
+    }
+    .contact-card img {
+        width: 32px;
+        height: 32px;
+        object-fit: fill;
+    }
+} 
+
 .bottom-header {
     position: absolute;
     height: 80px;
