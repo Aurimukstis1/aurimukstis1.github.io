@@ -119,10 +119,10 @@ body {
     overflow: visible !important;
     border: 1px solid var(--matte2);
     border-top: none;
-    margin-left: -1rem;
     position: absolute;
+    margin-left: -3rem !important;
 }
-    .list-index a {
+    .list-index a, .list-subdex a {
         color: white;
         text-decoration: none;
         font-size: 20px;
@@ -133,14 +133,14 @@ body {
         padding-right: 10px;
         border-radius: 3px;
     }
-    .list-index {
-        margin-left: 0.75rem;
+    .list-index, .list-subdex {
+        margin-left: 1.25rem;
     }
-    .list-index a:hover {
+    .list-index a:hover, .list-subdex a:hover {
         background-color: var(--matte3);
     }
-    .list-index::marker {
-        display: none;
+    .list-index::marker, .list-subdex::marker {
+        color: white;
     }
     .list-title {
         color: white;

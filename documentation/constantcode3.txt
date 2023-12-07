@@ -1,2 +1,1 @@
 The `section` is for simply giving the nav-bar a place to move to.
-like this section for example has `section id="constantcode"`, and the nav-bar is programmed to move to `#constantcode`

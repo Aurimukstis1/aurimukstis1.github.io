@@ -3,5 +3,3 @@ No out of place spaces, no asymmetrical newlines.
 
 I don't like unreadable clutter either, like minified code.
 I like to make my code readable, for myself, but for the purpose of other readers aswell.
-
-Take the HTML code for the sticky header that follows this page for example:
