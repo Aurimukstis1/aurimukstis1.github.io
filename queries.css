@@ -1,0 +1,96 @@
+/* NAME HEADER */
+@media only screen and (max-width: 1024px) {
+    .topheader-text {
+        font-size: 100px;
+    }
+} 
+@media only screen and (max-width: 620px) {
+    .topheader-text {
+        font-size: 60px;
+    }
+    .container-topheader {
+        height: 80px;
+    }
+} 
+
+
+/* Sticky header */
+@media only screen and (max-width: 1024px) {
+    .container-topheader-sticky #sticky-name {
+        display: none;
+    }
+} 
+@media only screen and (max-width: 620px) {
+    .container-topheader-sticky .right-content {
+        display: none;
+    }
+    .container-topheader-sticky .left-content {
+        display: none;
+    }
+} 
+
+
+/* Titles */
+@media only screen and (max-width: 1024px) {
+    .aboutme-title, .project-title, .contact-title, .skills-title, .photography-title, .blogs-title {
+        font-size: 60px;
+    }   
+} 
+@media only screen and (max-width: 620px) {
+    .aboutme-title, .project-title, .contact-title, .skills-title, .photography-title, .blogs-title {
+        font-size: 40px;
+    }  
+} 
+
+
+/* PROJECTS */
+@media only screen and (max-width: 1024px) {
+    .projects-container {
+        grid-template-columns: repeat(2,auto);
+        transform: scale(0.9);
+    }
+} 
+@media only screen and (max-width: 620px) {
+    .projects-container {
+        grid-template-columns: repeat(1,auto);
+        transform: scale(0.9);
+    }
+} 
+
+
+/* PHOTOGRAPHY */
+@media only screen and (max-width: 1024px) {
+    .photography-container {
+        grid-template-columns: repeat(2,auto);
+    }
+} 
+@media only screen and (max-width: 620px) {
+    .photography-container {
+        grid-template-columns: repeat(1,auto);
+    }
+} 
+
+
+/* CONTACT CARDS */
+@media only screen and (max-width: 1024px) {
+    .contact-card {
+        width: 64px;
+        height: 64px;
+    }
+    .contact-card img {
+        width: 64px;
+        height: 64px;
+        object-fit: fill;
+    }
+} 
+@media only screen and (max-width: 620px) {
+    .contact-card {
+        width: 48px;
+        height: 48px;
+    }
+    .contact-card img {
+        width: 48px;
+        height: 48px;
+        object-fit: fill;
+    }
+} 

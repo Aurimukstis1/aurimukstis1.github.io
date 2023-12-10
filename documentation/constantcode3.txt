@@ -1,1 +1,0 @@
-The `section` is for simply giving the nav-bar a place to move to.

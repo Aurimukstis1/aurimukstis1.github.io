@@ -56,20 +56,6 @@ body {
         margin: 0;
     }
 
-@media only screen and (max-width: 1024px) {
-    .topheader-text {
-        font-size: 100px;
-    }
-} 
-@media only screen and (max-width: 620px) {
-    .topheader-text {
-        font-size: 60px;
-    }
-    .container-topheader {
-        height: 80px;
-    }
-} 
-
 
 /* STICKY HEADER */
 .container-topheader-sticky {
@@ -120,22 +106,9 @@ body {
         align-items: center;
     }
 
-@media only screen and (max-width: 1024px) {
-    .container-topheader-sticky #sticky-name {
-        display: none;
-    }
-} 
-@media only screen and (max-width: 620px) {
-    .container-topheader-sticky .right-content {
-        display: none;
-    }
-    .container-topheader-sticky .left-content {
-        display: none;
-    }
-} 
 
 /* SECTIONS */
-.aboutme-title, .project-title, .contact-title, .skills-title, .photography-title, .blogs-title {
+.aboutme-title, .project-title, .contact-title, .skills-title, .photography-title, .blogs-title, .art-title {
     text-align: center;
     margin-bottom: 20px;
     color: white;
@@ -158,16 +131,6 @@ body {
         font-size: 40px;
     }
 
-@media only screen and (max-width: 1024px) {
-    .aboutme-title, .project-title, .contact-title, .skills-title, .photography-title, .blogs-title {
-        font-size: 60px;
-    }   
-} 
-@media only screen and (max-width: 620px) {
-    .aboutme-title, .project-title, .contact-title, .skills-title, .photography-title, .blogs-title {
-        font-size: 40px;
-    }  
-} 
 
 /* ABOUT ME */
 .profile-pic {
@@ -272,18 +235,6 @@ body {
         transition: opacity 0.3s;
     }
 
-@media only screen and (max-width: 1024px) {
-    .projects-container {
-        grid-template-columns: repeat(2,auto);
-        transform: scale(0.9);
-    }
-} 
-@media only screen and (max-width: 620px) {
-    .projects-container {
-        grid-template-columns: repeat(1,auto);
-        transform: scale(0.9);
-    }
-} 
 
 /* BLOG */
 .blogs-container {
@@ -361,6 +312,7 @@ body {
         transition: opacity 0.1s ease-in-out;
     }
     
+
 /* PHOTOGRAPHY */
 .photography-container {
     max-width: 1500px; /* Adjust this to your desired max width */
@@ -390,16 +342,36 @@ body {
         height: 100%;
     }
 
-@media only screen and (max-width: 1024px) {
-    .photography-container {
-        grid-template-columns: repeat(2,auto);
+
+.art-container {
+    max-width: 1500px; /* Adjust this to your desired max width */
+    margin: 0 auto; /* Center the grid horizontally */
+    display: grid;
+    grid-template-columns: repeat(2,auto); /* Display 3 cards per line */
+    gap: 10px;
+}
+    .art-box {
+        /* Adjust this to control the maximum width of each project card */
+        border: 1px solid black;
+        border-radius: 2px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.1s ease-in-out;
+        background-color: black;
+        border: 1px solid var(--matte2)
     }
-} 
-@media only screen and (max-width: 620px) {
-    .photography-container {
-        grid-template-columns: repeat(1,auto);
+
+    .art-box:hover {
+        transition: all 0.1s ease-in-out;
+        transform: scale(1.1);
+        cursor: pointer;
     }
-} 
+
+    .art img {
+        width: 100%;
+        height: 100%;
+    }
+
 
 /* CONTACT */
 .contact-cards {
@@ -427,28 +399,6 @@ body {
         object-fit: fill;
     }
 
-@media only screen and (max-width: 1024px) {
-    .contact-card {
-        width: 64px;
-        height: 64px;
-    }
-    .contact-card img {
-        width: 64px;
-        height: 64px;
-        object-fit: fill;
-    }
-} 
-@media only screen and (max-width: 620px) {
-    .contact-card {
-        width: 32px;
-        height: 32px;
-    }
-    .contact-card img {
-        width: 32px;
-        height: 32px;
-        object-fit: fill;
-    }
-} 
 
 .bottom-header {
     position: absolute;
