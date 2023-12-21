@@ -50,23 +50,6 @@ body {
 }
 
 
-/* PRIMARY HEADER */
-.container-topheader {
-    background-color: var(--matte2);
-    width: auto;
-    height: 200px;
-    text-align: center
-}
-    .topheader-text {
-        font-size: 150px;
-        letter-spacing: -1px;
-        font-weight: 7000;
-        font-family: 'Inter', sans-serif;
-        color: rgb(231, 231, 231);
-        margin: 0;
-    }
-
-
 /* STICKY HEADER */
 .container-topheader-sticky {
     height: 50px;
@@ -80,6 +63,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 100; /* Ensure the header appears above other elements */
+    border: 1px solid var(--matte2);
 }
     .container-topheader-sticky a {
         text-decoration: none;
