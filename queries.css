@@ -11,6 +11,10 @@
     .container-topheader-sticky .left-content {
         display: none;
     }
+    .container-topheader-sticky a {
+        width: 12px;
+        height: 12px;
+    }
 } 
 
 
