@@ -144,9 +144,28 @@ body {
     width: 84px;
     border-radius: 100%;
     transition: transform 0.3s ease-in-out;
+
 }
-    .profile-pic:hover {
+    .profile-pic:hover ~ .profile-flag {
         transform: scale(1.05);
+        transition: all ease-in-out 0.1s;
+    }
+    .profile-flag {
+        transition: all ease-in-out 0.1s;
+
+        --height-pfp: 84px;
+        --width-pfp: 84px;
+
+        --height: 88px;
+        --width: 88px;
+
+        position: absolute;
+        border-radius: 100%;
+        height: var(--height);
+        width: var(--width);
+        margin-left: calc((var(--width) - ((var(--width) - var(--width-pfp)) / 2)) * -1);
+        margin-top: calc(((var(--height) - var(--height-pfp)) / 2) * -1);
+        z-index: -1;
     }
 
 
