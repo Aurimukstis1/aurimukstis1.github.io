@@ -23,14 +23,25 @@ body {
     background-color: var(--matte1);
 
     --dot-bg: black;
-    --dot-color: var(--mgray);
-    --dot-size: 1px;
-    --dot-space: 20px;
+    --dot-color: var(--matte5);
+    --dot-size: 2px;
+    --dot-space: 50px;
     
     background:
         linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
         linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
         var(--dot-color);
+
+    animation: moveBackground 50s linear infinite;
+}
+    
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
 }
 
 /* the scrollbar on the right.. begone */
@@ -80,6 +91,7 @@ body {
         transform: scale(1.25);
         cursor: pointer;
     }
+
     .container-topheader-sticky .left-content {
         position: absolute;
         left: 10px;
@@ -97,7 +109,18 @@ body {
         letter-spacing: -1px;
         font-weight: 1000;
         font-family: 'outfit', sans-serif;
+    
     }
+    .container-topheader-sticky #sticky-name:hover {
+        color: white;
+        font-size: 24px;
+        margin-left: 10px;
+        letter-spacing: -1px;
+        font-weight: 1000;
+        font-family: 'outfit', sans-serif;
+        transform: scale(1);
+    }
+
     .container-topheader-sticky .right-content {
         position: absolute;
         right: 32px;
