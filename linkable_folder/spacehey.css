@@ -1,0 +1,83 @@
+/* Declaring root variables and keyframe functions */
+:root {
+    --shade1: #0099ff;
+    --shade2: #007acc;
+    --shade3: #005c99;
+    --shade4: #003d66;
+    --shade5: #001f33;
+    --matte1: rgb(10,10,10);
+    --matte2: rgb(20,20,20);
+    --matte3: rgb(30,30,30);
+    --matte4: rgb(40,40,40);
+    --matte5: rgb(50,50,50);
+    --matte6: rgb(60,60,60);
+    --matte7: rgb(70,70,70);
+    --matte8: rgb(80,80,80);
+    --matte9: rgb(90,90,90);
+    --mgray: rgb(100,100,100);
+}
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+
+/* Making the background scroll grid */
+body {
+    display: block;
+    margin: 0px;
+    background-color: var(--matte1);
+    --dot-bg: black;
+    --dot-color: var(--matte5);
+    --dot-size: 2px;
+    --dot-space: 50px;
+    background: linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space), linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space), var(--dot-color);
+
+    animation: moveBackground 50s linear infinite;
+}
+
+
+nav {
+    color: white;
+    font-size: 72%;
+    font-size: max(72%, 12px);
+}
+nav .top {
+    background: #1D4ED8;
+    background: var(--logo-blue);
+    padding: 15px 10px 14px 10px;
+    display: flex;
+    position: relative;
+}
+nav .top div {
+    display: inline-block;
+    vertical-align: top;
+}
+nav .links {
+    background-color: #60A5FA;
+    background-color: var(--lighter-blue);
+    padding: 3.5px 16px;
+}
+
+
+main {
+    background: white;
+    color: black;
+    padding: 6px 0px;
+    font-size: 80%;
+}
+
+
+/* footer */
+footer {
+    text-align: center;
+    font-size: 70%;
+    margin: 10px 0 10px;
+    padding: 10px 5px;
+    background-color: #e3e3e3;
+    background-color: var(--gray);
+}
