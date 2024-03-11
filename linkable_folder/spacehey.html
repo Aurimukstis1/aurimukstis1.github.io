@@ -1,3 +1,4 @@
+<style>
 /* Declaring root variables and keyframe functions */
 :root {
     --shade1: #0099ff;
@@ -15,6 +16,8 @@
     --matte8: rgb(80,80,80);
     --matte9: rgb(90,90,90);
     --mgray: rgb(100,100,100);
+
+    --accent-color: var(--shade3);
 }
 @keyframes moveBackground {
     0% {
@@ -65,10 +68,64 @@ nav .links {
 
 
 main {
-    background: white;
-    color: black;
+    background: rgba(0,0,0,0);
+    color: white;
     padding: 6px 0px;
     font-size: 80%;
+    border: 1px solid var(--matte2);
+}
+.col.w-40.left {
+    background: var(--matte1);
+}
+.profile h1 {
+    background: var(--matte2);
+    color: white;
+    font-size: 2.6rem;
+    letter-spacing: -1px;
+    text-align: center;
+    font-weight: 1000;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+.general-about .profile-pic img {
+    display: block;
+    float: left;
+    margin: 0 15px 8px 0;
+    height: 160px;
+    width: 160px;
+    border-radius: 100%;
+}
+.general-about .details {
+    display: block;
+}
+.profile .mood {
+    width: 100%;
+    display: inline-block;
+}
+.profile .contact, .profile .url-info, .profile .table-section, .setting-section, .home-actions {
+    width: 100%;
+    border: 2px solid var(--matte2);
+    margin: 10px 0;
+}
+.profile .contact .heading, .profile .table-section .heading, .setting-section .heading, .home-actions .heading {
+    background: var(--matte2);
+    color: white;
+    padding: 2px 7px;
+}
+.details-table td {
+    background: var(--matte3);
+    vertical-align: top;
+}
+.details-table td:first-child {
+    background: var(--matte4);
+    color: white;
+    font-weight: bold;
+    width: 33%;
+    text-align: center;
+}
+
+
+.col.right {
+    background: rgba(0,0,0,0);
 }
 
 
@@ -78,6 +135,20 @@ footer {
     font-size: 70%;
     margin: 10px 0 10px;
     padding: 10px 5px;
-    background-color: #e3e3e3;
-    background-color: var(--gray);
+    background-color: var(--matte1);
 }
+
+
+/* now to style the stuff actually inside the textbox */
+.link-to-site #name {
+    color: white;
+    font-size: 2.8rem;
+    letter-spacing: -1px;
+    font-weight: 1000;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+</style>
+
+<div class="link-to-site">
+    <a id="name" href="https://aurimukstis1.dev/">Aurimukstis1.dev</a>
+</div>
