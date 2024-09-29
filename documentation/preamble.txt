@@ -1,7 +1,1 @@
 Welcome to the **documentation** section of this website.
-
-Within this section, my goal is to provide insights into the various methods I employ for making this website, utilizing HTML, CSS, and Javascript. Through detailed explanations and practical demonstrations, I hope to show the depths of my web development approach.
-
-Despite the static nature of this site and its hosting on GitHub Pages, it holds significant value as a foundational platform for my ongoing journey in web development. Every line of code and design choice represents a stepping stone in my evolving experience within the vast landscape of web development.
-
-Feel free to delve into the documentation to gain a deeper understanding of the thought processes, techniques, and creativity that contribute to the construction of this website. Whether you are a fellow developer, an enthusiast, or someone curious about this half-baked website, I invite you to explore the code and design elements that shape it.

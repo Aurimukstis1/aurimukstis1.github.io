@@ -72,24 +72,24 @@
 } 
 
 
-/* social CARDS */
+/* CONTACT CARDS */
 @media only screen and (max-width: 1024px) {
-    .social-card {
+    .contact-card {
         width: 64px;
         height: 64px;
     }
-    .social-card img {
+    .contact-card img {
         width: 64px;
         height: 64px;
         object-fit: fill;
     }
 } 
 @media only screen and (max-width: 620px) {
-    .social-card {
+    .contact-card {
         width: 48px;
         height: 48px;
     }
-    .social-card img {
+    .contact-card img {
         width: 48px;
         height: 48px;
         object-fit: fill;

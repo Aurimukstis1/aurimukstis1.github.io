@@ -1,0 +1,134 @@
+:root {
+    --shade1 : #0099ff;
+    --shade2 : #007acc;
+    --shade3 : #005c99;
+    --shade4 : #003d66;
+    --shade5 : #001f33;
+
+    --matte1   : rgb(10,10,10);
+    --matte2   : rgb(20,20,20);
+    --matte3   : rgb(30,30,30);
+    --matte4   : rgb(40,40,40);
+    --matte5   : rgb(50,50,50);
+    --matte6   : rgb(60,60,60);
+    --matte7   : rgb(70,70,70);
+    --matte8   : rgb(80,80,80);
+    --matte9   : rgb(90,90,90);
+    --mgray    : rgb(100,100,100);
+}
+
+body {
+    display: block;
+    margin: 0px;
+    background-color: var(--matte1);
+
+    --dot-bg: black;
+    --dot-color: var(--matte5);
+    --dot-size: 2px;
+    --dot-space: 50px;
+    
+    background:
+        linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+        linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+        var(--dot-color);
+}
+
+/* STICKY HEADER */
+.container-topheader-sticky {
+    height: 3.125rem;
+    width: 100%;
+    display: flex;
+    padding: 10px 0px 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--matte1);
+    gap: 30px;
+    position: sticky;
+    top: 0;
+    z-index: 100; /* Ensure the header appears above other elements */
+    border-top: 1px solid var(--matte2);
+    border-bottom: 1px solid var(--matte2);
+}
+    .container-topheader-sticky a {
+        text-decoration: none;
+        color: white; /* text color */
+        transition: all 0.1s ease-in-out;
+    }
+    .container-topheader-sticky a:hover {
+        transition: all 0.1s ease-in-out;
+        transform: scale(1.25);
+        cursor: pointer;
+    }
+    .container-topheader-sticky .left-content {
+        position: absolute;
+        left: 10px;
+        display: flex;
+        align-items: center;
+    }
+    .container-topheader-sticky .left-content #sticky-logo {
+        width: 48px;
+        height: 48px;
+    }
+    .container-topheader-sticky #sticky-name {
+        color: white;
+        font-size: 24px;
+        margin-left: 10px;
+        letter-spacing: -1px;
+        font-weight: 1000;
+        font-family: 'outfit', sans-serif;
+    }
+    .container-topheader-sticky #sticky-name:hover {
+        color: white;
+        font-size: 24px;
+        margin-left: 10px;
+        letter-spacing: -1px;
+        font-weight: 1000;
+        font-family: 'outfit', sans-serif;
+        transform: scale(1);
+    }
+    .container-topheader-sticky .right-content {
+        position: absolute;
+        right: 32px;
+        display: flex;
+        align-items: center;
+    }
+
+/* the scrollbar on the right.. do not begone */
+::-webkit-scrollbar {
+    display: none;
+}
+
+.container-topheader-banner {
+    background-color: #e32636;
+    width: 100%;
+    height: 15rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-topheader-banner h1 {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin: 0;
+    font-family: Helvetica;
+    font-weight: 1000;
+    font-size: 10rem;
+}
+
+.container-main {
+    width: 100%;
+    height: 10rem;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.container-main h1 {
+    color: #e32636;
+    text-align: center;
+    margin: 0;
+    padding-top: 2rem;
+    font-family: Helvetica;
+    font-weight: 700;
+    font-size: 5rem;
+}

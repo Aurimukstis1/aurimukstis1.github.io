@@ -32,7 +32,7 @@ body {
         linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
         var(--dot-color);
 
-    animation: moveBackground 100s linear infinite;
+    animation: moveBackground 50s linear infinite;
 }
     
 @keyframes moveBackground {
@@ -114,7 +114,7 @@ body {
 
 
 /* SECTIONS */
-.aboutme-title, .project-title, .social-title, .skills-title, .photography-title, .blogs-title, .art-title {
+.aboutme-title, .project-title, .contact-title, .skills-title, .photography-title, .blogs-title, .art-title {
     text-align: center;
     margin-bottom: 20px;
     color: white;
@@ -398,15 +398,15 @@ body {
     }
 
 
-/* SOCIALS */
-.social-cards {
+/* CONTACT */
+.contact-cards {
     margin: 0 auto; /* Center the cards */
     display: grid;
     grid-template-columns: repeat(4,auto);
     justify-content: center;
     align-items: center;
 }
-    .social-card {
+    .contact-card {
         width: 84px;
         height: 84px;
         cursor: pointer;
@@ -414,11 +414,11 @@ body {
         padding: 10px;
     }
 
-    .social-card:hover {
+    .contact-card:hover {
         transform: scale(1.05);
     }
 
-    .social-card img {
+    .contact-card img {
         width: 84px;
         height: 84px;
         object-fit: fill;
