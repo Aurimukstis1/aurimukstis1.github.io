@@ -22,15 +22,7 @@ body {
     margin: 0px;
     background-color: var(--matte1);
 
-    --dot-bg: black;
-    --dot-color: var(--matte5);
-    --dot-size: 2px;
-    --dot-space: 50px;
-    
-    background:
-        linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
-        linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
-        var(--dot-color);
+    background: linear-gradient(to top, #ff5010, #101010);
 
     animation: moveBackground 100s linear infinite;
 }
@@ -45,7 +37,6 @@ body {
 }
 
 /* the scrollbar on the right.. begone */
-/* random line hello */
 ::-webkit-scrollbar {
     display: none;
 }
@@ -121,8 +112,17 @@ body {
     color: white;
     font-size: 80px;
     letter-spacing: -1px;
-    font-weight: 700;
-    font-family: 'outfit', sans-serif;
+    font-weight: 200;
+    font-family: 'times new roman', sans-serif;
+}
+.aboutme-subtitle {
+    text-align: center;
+    margin-bottom: 40px;
+    color: white;
+    font-size: 40px;
+    letter-spacing: 1px;
+    font-weight: 10;
+    font-family: 'times new roman', sans-serif;
 }
     section article {
         text-align: center;
