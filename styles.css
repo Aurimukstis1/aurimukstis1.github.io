@@ -15,6 +15,8 @@
     --matte8   : rgb(80,80,80);
     --matte9   : rgb(90,90,90);
     --mgray    : rgb(100,100,100);
+
+    overflow-x: hidden;
 }
 
 body {
@@ -44,26 +46,26 @@ body {
 
 /* STICKY HEADER */
 .container-topheader-sticky {
-    height: 50px;
+    height: 70px;
     width: 100%;
     display: flex;
-    padding: 10px 0px 10px;
+    padding: 0px 0px 0px;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
     background-color: var(--matte1);
     gap: 30px;
     position: sticky;
     top: 0;
-    z-index: 100; /* Ensure the header appears above other elements */
+    z-index: 100;
     border: 1px solid var(--matte2);
 }
     .container-topheader-sticky a {
         text-decoration: none;
-        color: white; /* text color */
+        color: white;
         transition: all 0.1s ease-in-out;
     }
     .container-topheader-sticky a:hover {
-        transition: all 0.1s ease-in-out;
         transform: scale(1.25);
         cursor: pointer;
     }
@@ -84,22 +86,13 @@ body {
         margin-left: 10px;
         letter-spacing: -1px;
         font-weight: 1000;
-        font-family: 'outfit', sans-serif;
-    
-    }
-    .container-topheader-sticky #sticky-name:hover {
-        color: white;
-        font-size: 24px;
-        margin-left: 10px;
-        letter-spacing: -1px;
-        font-weight: 1000;
-        font-family: 'outfit', sans-serif;
+        font-family: Helvetica, sans-serif;
         transform: scale(1);
     }
 
     .container-topheader-sticky .right-content {
         position: absolute;
-        right: 32px;
+        right: 20px;
         display: flex;
         align-items: center;
     }
@@ -108,12 +101,15 @@ body {
 /* SECTIONS */
 .aboutme-title, .project-title, .social-title, .skills-title, .photography-title, .blogs-title, .art-title {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     color: white;
     font-size: 80px;
     letter-spacing: -1px;
-    font-weight: 200;
-    font-family: 'times new roman', sans-serif;
+    font-family: Helvetica, sans-serif;
+    font-weight: 1000;
+    background-image: linear-gradient(to right, #ffffff, #dba100);
+    color: transparent;
+    background-clip: text;
 }
 .aboutme-subtitle {
     text-align: center;
@@ -123,6 +119,9 @@ body {
     letter-spacing: 1px;
     font-weight: 10;
     font-family: 'times new roman', sans-serif;
+    background-image: linear-gradient(to bottom, #d1dd61, #ff9900);
+    color: transparent;
+    background-clip: text;
 }
     section article {
         text-align: center;
@@ -145,7 +144,6 @@ body {
     width: 84px;
     border-radius: 100%;
     transition: transform 0.3s ease-in-out;
-
 }
     .profile-pic:hover ~ .profile-flag {
         transform: scale(1.05);
@@ -176,10 +174,11 @@ body {
     color: white;
 }
     .skills-classes {
-        max-width: 350px; /* Adjust this to your desired max width */
-        margin: 0 auto; /* Center the grid horizontally */
-        display: grid;
-        grid-template-columns: repeat(3,auto); /* Display 3 cards per line */
+        max-width: 350px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
     }
 
     .skill-card {
@@ -188,7 +187,6 @@ body {
         cursor: pointer;
         transition: transform 0.3s ease-in-out;
         padding: 10px;
-        margin: 0 auto; /* Center the cards */
     }
 
     .skill-card img {
@@ -198,169 +196,205 @@ body {
     }
 
     .skill-card:hover {
-        transform: scale(1.05);
+        transform: scale(1.15);
     }
 
 
 /* PROEJCTS */
 .projects-container {
-    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3,auto);
-    gap: 10px;
-    border: 1px solid black;
-    border-radius: 2px;
-}
-    .project-card {
-        width: 100%;
-        height: 600px;
 
-        transition: all 0.1s ease-in-out;
-        background-color: var(--matte1);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+}
+    .projects-container .project-card {
+        transition: .5s;
+        filter: brightness(0.2);
+        transform: translateZ(0);
     }
 
-    .project-card:hover {
-        transition: all 0.1s ease-in-out;
-        transform: scale(1.02);
-        cursor: pointer;
+    .projects-container .project-card:hover {
+        filter: brightness(1);
+        transform: translateZ(100px);
+    }
+    .projects-container .project-card:hover +*{
+        filter: brightness(0.7);
+        transform: translateZ(50px);
+        transform: rotateY(10deg);
+    }
+    .projects-container .project-card:hover +*+*{
+        filter: brightness(0.5);
+        transform: translateZ(20px);
+        transform: rotateY(5deg);
+    }
+    .projects-container .project-card:has(+*:hover){
+        filter: brightness(0.7);
+        transform: translateZ(50px);
+        transform: rotateY(-10deg);
+    }
+    .projects-container .project-card:has(+*+*:hover){
+        filter: brightness(0.5);
+        transform: translateZ(20px);
+        transform: rotateY(-5deg);
     }
     
-    .project-card img {
-        width: 100%;
+    .projects-container .project-card img {
+        width: 400px;
         height: 600px;
         object-fit: cover;
     }
 
-    .project-card a {
+    .projects-container .project-card a {
         color: white;
-        font-size: 30px;
+        font-size: 3rem;
         font-weight: 700;
-        font-family: 'Inter', sans-serif;
+        font-family: Helvetica, Sans-Serif;
         opacity: 0;
-        transition: opacity 0.3s;
         position: absolute;
         bottom: 20%;
         left: 16px;
     }
 
-    .project-card p {
+    .projects-container .project-card p {
         color: white;
         font-size: 20px;
         font-weight: 700;
         font-family: 'Inter', sans-serif;
-        opacity: 0;
         position: absolute;
         text-align: left;
         bottom: 10%;
         left: 16px;
+
+        opacity: 0;
+        transition: opacity 0.3s;
     }
 
-    .project-card:hover a, .project-card:hover p {
+    .projects-container .project-card:hover a, .projects-container .project-card:hover p {
         opacity: 1;
         transition: opacity 0.3s;
     }
 
-
-/* BLOG */
-.blogs-container {
-    max-width: 800px;
-    margin: 0 auto;
-    display: grid;
-    /* grid-template-columns: repeat(2,auto); */
-    gap: 10px;
-    border: 1px solid rgb(0, 0, 0);
-    border-radius: 2px;
+@keyframes scrollLeft {
+    to {
+        left: -400px;
+    }
 }
-    .blogs-card {
-        height: auto;
-        transition: all 0.1s ease-in-out;
-        background-color: var(--matte1);
-        border: 1px solid rgb(25, 25, 25);
-        border-radius: 2px;
+
+.skeleton-project-container {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0 auto;
+
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+}
+    .skeleton-project-container .project-card {
+        width: 400px;
+        height: 400px;
+        position: absolute;
+        left: max(calc(400px * 5), 100%);
+        animation-name: scrollLeft;
+        animation-duration: 30s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+
+        transition: .5s;
+        filter: brightness(0.8);
+        transform: translateZ(0);
+    }
+
+    .skeleton-project-container .item1 {
+        animation-delay: calc(30s / 5 * (5 - 1) * -1);
+    }
+      
+    .skeleton-project-container .item2 {
+        animation-delay: calc(30s / 5 * (5 - 2) * -1);
+    }
+      
+    .skeleton-project-container .item3 {
+        animation-delay: calc(30s / 5 * (5 - 3) * -1);
+    }
+      
+    .skeleton-project-container .item4 {
+        animation-delay: calc(30s / 5 * (5 - 4) * -1);
+    }
+      
+    .skeleton-project-container .item5 {
+        animation-delay: calc(30s / 5 * (5 - 5) * -1);
+    }
+
+    .skeleton-project-container .project-card:hover {
+        filter: brightness(1);
+        transform: rotateX(5deg) translateZ(50px);
     }
     
-    .blogs-card img {
-        width: 100%;
-        height: 200px;
+    .skeleton-project-container .project-card img {
+        width: 400px;
+        height: 400px;
         object-fit: cover;
-        transition: all 0.1s ease-in-out;
     }
 
-    .blogs-card:hover img {
-        transform: scale(0.99);
-        transition: all 0.1s ease-in-out;
-    }
-
-    .blogs-card h2 {
+    .skeleton-project-container .project-card a {
         color: white;
-        font-size: 40px;
-        font-weight: 1000;
-        font-family: 'Inter', sans-serif;
-        top: -20%;
-        margin-left: 10px;
-        position: absolute;
-        z-index: 1;
-        opacity: 0.5;
-    }
-  
-    .blogs-card a {
-        display: block;
-        position: relative;
-        text-decoration: none;
-    }
-
-    .blogs-card p {
-        color: whitesmoke;
-        font-size: 10px;
-        font-weight: 200;
-        font-family: 'Inter', sans-serif;
-        text-align: left;
-        margin-left: 20px;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        background: rgba(0, 0, 0, 0.3); /* semi-transparent black background */
-        padding: 10px;
-        margin: 0;
-        z-index: 1;
+        font-size: 3rem;
+        font-weight: 700;
+        font-family: Helvetica, Sans-Serif;
         opacity: 0;
-        transition: opacity 0.1s ease-in-out;
+        position: absolute;
+        bottom: 20%;
+        left: 16px;
     }
 
-    .blogs-card:hover p {
-        opacity: 1;
-        transition: opacity 0.1s ease-in-out;
+    .skeleton-project-container .project-card p {
+        color: white;
+        font-size: 20px;
+        font-weight: 700;
+        font-family: 'Inter', sans-serif;
+        position: absolute;
+        text-align: left;
+        bottom: 10%;
+        left: 16px;
+
+        opacity: 0;
+        transition: opacity 0.3s;
     }
 
-    .blogs-card:hover h2 {
+    .skeleton-project-container .project-card:hover a, .skeleton-project-container .project-card:hover p {
         opacity: 1;
-        transition: opacity 0.1s ease-in-out;
+        transition: opacity 0.3s;
     }
     
 
 /* PHOTOGRAPHY */
 .photography-container {
-    max-width: 1500px; /* Adjust this to your desired max width */
-    margin: 0 auto; /* Center the grid horizontally */
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3,auto); /* Display 3 cards per line */
+    grid-template-columns: repeat(3,auto);
     gap: 10px;
+
+    margin-left: 10px;
+    margin-right: 10px;
+
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
 }
     .photography-box {
-        /* Adjust this to control the maximum width of each project card */
         border: 1px solid black;
         border-radius: 2px;
         overflow: hidden;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        transition: all 0.1s ease-in-out;
-        background-color: black;
+
+        transition: .5s;
     }
 
     .photography-box:hover {
-        transition: all 0.1s ease-in-out;
-        transform: scale(1.1);
-        cursor: pointer;
+        transform: scale(1.10);
     }
 
     .photography img {
@@ -370,14 +404,14 @@ body {
 
 
 .art-container {
-    max-width: 1500px; /* Adjust this to your desired max width */
-    margin: 0 auto; /* Center the grid horizontally */
-    display: grid;
-    grid-template-columns: repeat(2,auto); /* Display 3 cards per line */
+    margin-left: 10px;
+    margin-right: 10px;
     gap: 10px;
+
+    display: flex;
+    justify-content: space-evenly;
 }
     .art-box {
-        /* Adjust this to control the maximum width of each project card */
         border: 1px solid black;
         border-radius: 2px;
         overflow: hidden;
@@ -401,11 +435,13 @@ body {
 
 /* SOCIALS */
 .social-cards {
-    margin: 0 auto; /* Center the cards */
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(4,auto);
     justify-content: center;
     align-items: center;
+
+    margin-bottom: 50px;
 }
     .social-card {
         width: 84px;
@@ -432,10 +468,11 @@ body {
     color: white;
     background-color: var(--matte1);
     width: 100%;
+    margin-top: 20px;
 }
     .bottom-header-text {
         color: var(--matte2);
-        font-size: 20px;
+        font-size: 2rem;
         font-weight: 700;
         font-family: 'Inter', sans-serif;
         text-align: left;
