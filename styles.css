@@ -24,9 +24,17 @@ body {
     margin: 0px;
     background-color: var(--matte1);
 
-    background: linear-gradient(to top, #ff5010, #101010);
-
     animation: moveBackground 100s linear infinite;
+
+    --dot-bg: var(--matte1);
+    --dot-color: var(--matte5);
+    --dot-size: 2px;
+    --dot-space: 50px;
+    
+    background:
+        linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+        linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+        var(--dot-color);
 }
     
 @keyframes moveBackground {
@@ -53,7 +61,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    background-color: var(--matte1);
+    background: var(--matte2);
     gap: 30px;
     position: sticky;
     top: 0;
@@ -102,26 +110,26 @@ body {
 .aboutme-title, .project-title, .social-title, .skills-title, .photography-title, .blogs-title, .art-title {
     text-align: center;
     margin-bottom: 30px;
-    color: white;
+    color: #F26716;
     font-size: 80px;
     letter-spacing: -1px;
-    font-family: Helvetica, sans-serif;
+    font-family: "Helvetica", sans-serif;
     font-weight: 1000;
-    background-image: linear-gradient(to right, #ffffff, #dba100);
+    background-image: linear-gradient(to bottom, var(--shade1), var(--shade3));
     color: transparent;
     background-clip: text;
 }
 .aboutme-subtitle {
     text-align: center;
     margin-bottom: 40px;
-    color: white;
+    color: #A62F03;
     font-size: 40px;
     letter-spacing: 1px;
     font-weight: 10;
     font-family: 'times new roman', sans-serif;
-    background-image: linear-gradient(to bottom, #d1dd61, #ff9900);
+    /*background-image: linear-gradient(to bottom, #d1dd61, #ff9900);
     color: transparent;
-    background-clip: text;
+    background-clip: text;*/
 }
     section article {
         text-align: center;
@@ -131,10 +139,12 @@ body {
     section article p {
         margin-bottom: 10px;
         text-align: center;
+        font-size: 1.5rem;
+        color: whitesmoke;
     }
 
     .skills-title {
-        font-size: 40px;
+        font-size: 2.5rem;
     }
 
 
@@ -172,6 +182,7 @@ body {
 .skills-container p {
     text-align: center;
     color: white;
+    font-size: 1.5rem;
 }
     .skills-classes {
         max-width: 350px;
@@ -248,34 +259,39 @@ body {
         object-fit: cover;
     }
 
-    .projects-container .project-card a {
+    .projects-container .project-card h1 {
         color: white;
         font-size: 3rem;
         font-weight: 700;
         font-family: Helvetica, Sans-Serif;
-        opacity: 0;
         position: absolute;
-        bottom: 20%;
-        left: 16px;
+        bottom: 1rem;
+        left: 1rem;
+
+        user-select: none;
+
+        opacity: 0;
+        transition: opacity 0.5s;
     }
 
     .projects-container .project-card p {
         color: white;
-        font-size: 20px;
+        font-size: 1rem;
         font-weight: 700;
         font-family: 'Inter', sans-serif;
         position: absolute;
         text-align: left;
-        bottom: 10%;
-        left: 16px;
+        bottom: 1rem;
+        left: 1rem;
+
+        user-select: none;
 
         opacity: 0;
-        transition: opacity 0.3s;
+        transition: opacity 0.5s;
     }
 
-    .projects-container .project-card:hover a, .projects-container .project-card:hover p {
+    .projects-container .project-card:hover h1, .projects-container .project-card:hover p {
         opacity: 1;
-        transition: opacity 0.3s;
     }
 
 @keyframes scrollLeft {
@@ -339,36 +355,51 @@ body {
         width: 400px;
         height: 400px;
         object-fit: cover;
+
+        border-radius: 1rem;
+
+        filter:blur(1px);
+        transition: 0.3s;
     }
 
-    .skeleton-project-container .project-card a {
+    .skeleton-project-container .project-card:hover img {
+        filter:blur(0px);
+    }
+
+    .skeleton-project-container .project-card h1 {
         color: white;
         font-size: 3rem;
-        font-weight: 700;
+        font-weight: 900;
         font-family: Helvetica, Sans-Serif;
-        opacity: 0;
+        
         position: absolute;
-        bottom: 20%;
-        left: 16px;
+
+        bottom: 1rem;
+        left: 1rem;
+
+        opacity: 0;
+        transition: opacity 0.3s;
+        user-select: none;
     }
 
     .skeleton-project-container .project-card p {
-        color: white;
-        font-size: 20px;
-        font-weight: 700;
+        color: whitesmoke;
+        font-size: 1rem;
+        font-weight: 500;
         font-family: 'Inter', sans-serif;
-        position: absolute;
-        text-align: left;
-        bottom: 10%;
-        left: 16px;
 
-        opacity: 0;
+        position: absolute;
+
+        bottom: 1rem;
+        left: 1rem;
+
+        opacity: 0.05;
         transition: opacity 0.3s;
+        user-select: none;
     }
 
-    .skeleton-project-container .project-card:hover a, .skeleton-project-container .project-card:hover p {
+    .skeleton-project-container .project-card:hover h1, .skeleton-project-container .project-card:hover p {
         opacity: 1;
-        transition: opacity 0.3s;
     }
     
 
@@ -479,3 +510,4 @@ body {
         margin-left: 10px;
         margin-top: 10px;
     }
+
