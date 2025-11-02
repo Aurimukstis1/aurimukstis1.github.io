@@ -101,9 +101,16 @@ body {
 
 
 .scrolling-warning {
-    margin-top: -1rem;
-    height: 20px;
-    background-color: red;
+    margin-bottom: 1rem;
+    padding: 0.25rem;
+    color: #fff;
+    background-color: #f00;
+
+    & p {
+        margin-left: 1rem;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 1000;
+    }
 }
 
 
