@@ -1,25 +1,18 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Get all the navigation links
-    var navLinks = document.querySelectorAll('.container-topheader-sticky a');
+    var navLinks = document.querySelectorAll('.header-bar__navigation a');
 
     // Attach click event listeners to each link
     navLinks.forEach(function(link) {
         link.addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent the default behavior of the link
-
-            // Get the target section from the link's href attribute
+            event.preventDefault();
             var targetHref = link.getAttribute('href');
 
-            // Check if the link starts with "/"
             if (targetHref.startsWith('/')) {
-                // Handle normal links (starting with "/")
-                window.location.href = targetHref; // Redirect to the specified URL
+                window.location.href = targetHref;
             } else {
-                // Handle internal links (with "#")
                 var targetSection = document.querySelector(targetHref);
 
                 if (targetSection) {
-                    // Scroll to the target section with smooth behavior
                     targetSection.scrollIntoView({ behavior: 'smooth' });
                 }
             }
@@ -30,3 +23,18 @@ document.addEventListener("DOMContentLoaded", function() {
 function goBack() {
     window.history.back();
 }
+
+const btn = document.querySelector(".dropdown-btn");
+const content = document.querySelector(".dropdown-content");
+const items = document.querySelectorAll(".dropdown-item");
+
+btn.addEventListener("click", () => {
+content.style.display = content.style.display === "block" ? "none" : "block";
+});
+
+items.forEach(item => {
+item.addEventListener("click", () => {
+    btn.textContent = item.querySelector("strong").textContent;
+    content.style.display = "none";
+});
+});

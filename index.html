@@ -1,272 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="queries.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
     <title>Aurimukstis1.dev</title>
-    <meta name="description" content="Aurimukstis1 Portfolio website.">
-    <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonts importing -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
-  </head>
-  <body id="bodyd">
+</head>
+<body>
+    <span class="header-bar">
+        <section class="header-bar__left">
+            <img src="assets/favicon-32x32.png" alt="Profile Picture">
+            <p>aurimukstis1.dev</p>
+        </section>
+        <section class="header-bar__middle">
+            <nav class="header-bar__navigation">
+                <a href="#goto-button-1">
+                    <img src="assets/svg/user.svg" alt="Profile">
+                </a>
+                <a href="#goto-button-2">
+                    <img src="assets/svg/file-text.svg" alt="Skills">
+                </a>
+                <a href="#goto-button-3">
+                    <img src="assets/svg/folder.svg" alt="Projects">
+                </a>
+            </nav>
+        </section>
+        <section class="header-bar__right">
+            <a href="./dev/dev.html">
+                <img src="assets/svg/code.svg" alt="Home">
+            </a>
+        </section>
+    </span>
+
     <main>
-
-      <div class="container-topheader-sticky">
-
-        <div class="left-content">
-          <img src="profile-logo-modern.png" id="sticky-logo">
-          <a id="sticky-name" href="/">Aurimukstis1.dev</a>
-        </div>
-
-        <div class="center-content">
-          <div>
-            <a href="#aboutme">
-              <img src="svg/user.svg" alt="aboutme">
-            </a>
-          </div>
-          <div>
-            <a href="#skills">
-              <img src="svg/book-open.svg" alt="skills">
-            </a>
-          </div>
-          <div>
-            <a href="#projects">
-              <img src="svg/folder.svg" alt="projects">
-            </a>
-          </div>
-          <div>
-            <a href="#photography">
-              <img src="svg/camera.svg" alt="photography">
-            </a>
-          </div>
-          <div>
-            <a href="#art">
-              <img src="svg/pen-tool.svg" alt="art">
-            </a>
-          </div>
-          <div>
-            <a href="#social">
-              <img src="svg/mail.svg" alt="social">
-            </a>
-          </div>
-        </div>
-
-        <div class="right-content">
-          <a href="/documentation/documentation.html">
-            <img src="svg/code.svg" id="sticky-logo-code">
-          </a>
-        </div>
-
-      </div>
-
-      <section id="aboutme" class="aboutme">
-        <h1 class="aboutme-title" id="title">- About Me -</h1>
-
-        <article>
-            <img src="profile-logo-modern.png" alt="" class="profile-pic">
-            <img src="ltu-flag.svg.webp" alt="" class="profile-flag">
-          <p>
-            < Aspiring fullstack webdev ><br>
-            < Intermediate pixel artist >
-          </p>
+        <article class="main-profile" id="goto-button-1">
+            <img src="assets/android-chrome-192x192.png" alt="Profile Picture">
+            <p>
+                <span class="main-profile__gimmick-greet">def get_user -> Auri | Aurimukstis1</span><br>
+                <span class="main-profile__descriptor">Full-Stack Software Engineering Student</span><br><br>
+                <i><a href="https://en.wikipedia.org/wiki/Utilitarianism">Utilitarian</a></i>
+            </p>
         </article>
-      </section>
 
-      <section id="skills" class="skills">
-        <h1 class="skills-title" id="title">- Skills -</h1>
+        <article class="main-skills" id="goto-button-2">
+            <p>I'm familiar with</p>
+            <section class="the-front">
+                <p>The Front</p>
+                <section>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+                </section>
+            </section>
+            <section class="the-back">
+                <p>The Back</p>
+                <section>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" />
+                </section>
+            </section>
+            <section class="the-ugly">
+                <p>& The Ugly</p>
+                <section>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original-wordmark.svg" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original-wordmark.svg" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/materialui/materialui-original.svg" />
+                </section>
+            </section>
+        </article>
 
-        <div class="skills-container">
-          <p>- Intermediate -</p>
-          <div class="skills-classes">
-            <div class="skill-card">
-              <img src="python-logo.png" alt="python">
-            </div>
+        <article class="main-projects" id="goto-button-3">
+            <p>Projects</p>
 
-            <div class="skill-card">
-              <img src="css-logo.png" alt="css">
-            </div>
-
-            <div class="skill-card">
-              <img src="html-logo.png" alt="html">
-            </div>
-          </div>
-
-          <p>- Beginner -</p>
-          <div class="skills-classes">
-            <div class="skill-card">
-              <img src="javascript-logo.png" alt="javascript">
-            </div>
-
-            <div class="skill-card">
-              <img src="rust-logo.png" alt="rust">
-            </div>
-
-            <div class="skill-card">
-              <img src="cpp-logo.png" alt="cpp">
-            </div>
-          </div>
-          
-        </div>
-
-      </section>
-
-      <section id="projects" class="projects">
-        <h1 class="project-title" id="title">- Projects -</h1>
-
-        <div class="projects-container">
-
-          <article class="project-card">
-            <a href="https://github.com/Aurimukstis1/Tangerine">
-              <img src="tangerine-project.jpg" alt="Project 1">
-              <h1>Tangerine</h1>
-              <img src="python-logo.png" alt="python" class="lang">
-            </a>
-          </article>
-
-          <article class="project-card">
-            <a href="https://github.com/Aurimukstis1/nationwider-git">
-              <img src="tastiest-project.jpg" alt="Project 2">
-              <h1>Nationwider</h1>
-              <img src="python-logo.png" alt="python" class="lang">
-            </a>
-          </article>
-
-          <article class="project-card">
-            <a href="https://github.com/Aurimukstis1/Nationwider-C">
-              <img src="tastiest-project.jpg" alt="Project 3">
-              <h1>Nationwider</h1>
-              <img src="cpp-logo.png" alt="cplusplus" class="lang">
-            </a>
-          </article>
-
-          <article class="project-card">
-            <a href="https://github.com/Aurimukstis1/Slitherchunk">
-              <img src="waterflow-project.jpg" alt="Project 4">
-              <h1>Slitherchunk</h1>
-              <img src="python-logo.png" alt="python" class="lang">
-            </a>
-          </article>
-
-        </div>
-
-        <h2 class="project-title" id="title">- Project Skeletons -</h2>
-
-        <div class="skeleton-project-container">
-
-          <article class="project-card item1">
-            <a href="https://github.com/Aurimukstis1/python_arcade_skeleton/blob/main/main.py">
-              <img src="arcade-logo.png" alt="Project 1">
-              <h1>Arcade</h1>
-              <img src="python-logo.png" alt="python" class="lang">
-            </a>
-          </article>
-
-          <article class="project-card item2">
-            <a href="">
-              <h1>Placeholder</h1>
-              <p>Placeholder</p>
-            </a>
-          </article>
-
-          <article class="project-card item3">
-            <a href="https://github.com/Aurimukstis1/python_pygame_skeleton/blob/main/main.py">
-              <img src="pygame-logo.svg" alt="Project 1">
-              <h1>Pygame</h1>
-              <img src="python-logo.png" alt="python" class="lang">
-            </a>
-          </article>
-
-          <article class="project-card item4">
-            <a href="">
-              <h1>Placeholder</h1>
-              <p>Placeholder</p>
-            </a>
-          </article>
-
-          <article class="project-card item5">
-            <a href="">
-              <h1>Placeholder</h1>
-              <p>Placeholder</p>
-            </a>
-          </article>
-
-        </div>
-      </section>
-
-      <section id="photography" class="photography">
-        <h1 class="photography-title" id="title">- Photography -</h1>
-
-        <div class="photography-container">
-
-          <div class="photography-box">
-            <img src="photography/IMG_20200816_000854~2.jpg" alt="Photo">
-          </div>
-          <div class="photography-box">
-            <img src="photography/IMG_20200816_005256.jpg" alt="Photo">
-          </div>
-          <div class="photography-box">
-            <img src="photography/IMG_20200816_005425.jpg" alt="Photo">
-          </div>
-          <div class="photography-box">
-            <img src="photography/IMG_20200920_043426.jpg" alt="Photo">
-          </div>
-          <div class="photography-box">
-            <img src="photography/IMG_20201023_220544~4.jpg" alt="Photo">
-          </div>
-          <div class="photography-box">
-            <img src="photography/IMG_20210812_231838.jpg" alt="Photo">
-          </div>
-
-        </div>
-      </section>
-
-      <section id="art" class="art">
-        <h1 class="art-title">- Art -</h1>
-
-        <div class="art-container">
-
-          <div class="art-box">
-            <img src="Art/px_tree1.png" alt="art">
-          </div>
-          <div class="art-box">
-            <img src="Art/px_tree2.png" alt="art">
-          </div>
-          <div class="art-box">
-            <img src="Art/px_tree3.png" alt="art">
-          </div>
-          <div class="art-box">
-            <img src="Art/px_tree4.png" alt="art">
-          </div>
-
-        </div>
-      </section>
-
-      <section id="social">
-        <h1 class="social-title" id="title"> Socials </h1>
-
-        <div class="social-cards">
-
-          <div class="social-card" onclick="window.location.href='https://www.reddit.com/user/Aurimukstis1/';">
-            <img src="reddit-logo.png" alt="Reddit Logo">
-          </div>
-
-          <div class="social-card" onclick="window.location.href='https://github.com/Aurimukstis1';">
-            <img src="github-logo.png" alt="Github Logo">
-          </div>
-
-        </div>
-      </section>
-
-      <div class="bottom-header">
-        <h2 class="bottom-header-text">
-          2025 @ Aurimukstis1
-        </h2>
-      </div>
-
+            <section>
+                <div class="main-projects__project" id="latest_entry">
+                    <section class="project__header">
+                        <p>Nationwider</p>
+                        <span>
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
+                        </span>
+                    </section>
+                    <section class="project__link">
+                        <a href="https://github.com/Aurimukstis1/Nationwider-cpp">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" />
+                        </a>
+                    </section>
+                </div>
+                <div class="main-projects__project">
+                    <section class="project__header">
+                        <p>Nationwider</p>
+                        <span>
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" />
+                        </span>
+                    </section>
+                    <section class="project__link">
+                        <a href="https://github.com/Aurimukstis1/Nationwider-py">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" />
+                        </a>
+                    </section>
+                </div>
+                <div class="main-projects__project">
+                    <section class="project__header">
+                        <p><a href="https://Aurimukstis1.dev/TECHIN-PROJECT-PAYAPI">PayAPI Website</a></p>
+                        <span>
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+                        </span>
+                    </section>
+                    <section class="project__link">
+                        <a href="https://github.com/Aurimukstis1/TECHIN-PROJECT-PAYAPI">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" />
+                        </a>
+                    </section>
+                </div>
+                <div class="main-projects__project">
+                    <section class="project__header">
+                        <p>Python VM</p>
+                        <span>
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
+                        </span>
+                    </section>
+                    <section class="project__link">
+                        <a href="https://github.com/Aurimukstis1/Python-VirtualMachine">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" />
+                        </a>
+                    </section>
+                </div>
+                <div class="main-projects__project">
+                    <section class="project__header">
+                        <p>Slitherchunk</p>
+                        <span>
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
+                        </span>
+                    </section>
+                    <section class="project__link">
+                        <a href="https://github.com/Aurimukstis1/Slitherchunk">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" />
+                        </a>
+                    </section>
+                </div>
+                <div class="main-projects__project">
+                    <section class="project__header">
+                        <p>Flavor communication</p>
+                        <span>
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
+                        </span>
+                    </section>
+                    <section class="project__link">
+                        <a href="https://github.com/Aurimukstis1/flavor-comms">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" />
+                        </a>
+                    </section>
+                </div>
+            </section>
+        </article>
     </main>
-  </body>
+</body>
 </html>

@@ -1,0 +1,319 @@
+:root {
+    --background: #222222;
+    --primary: #C2D8C4;
+    --text: #FEFEFE;
+    --accent: #C5E384;
+    --separator: #303030;
+}
+body {
+    background-color: var(--background);
+
+    * a {
+        text-decoration: none;
+        color: var(--text);
+    }
+}
+* {
+    transition: 0.25s all;
+}
+
+/* Top bar header */
+.header-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+
+    backdrop-filter: blur(4px);
+    border-radius: 1rem;
+    background-color: rgba(35, 35, 35, 0.75);
+    border: 1px solid #303030;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    
+    position: sticky;
+    top: 0.5rem;
+}
+
+.header-bar__left {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+
+    & img {
+        margin-left: 1rem;
+        display: none;
+        width: 32px;
+        height: 32px;
+        align-self: center;
+    }
+
+    & p {
+        font-family: Arial, Helvetica, sans-serif;
+        text-transform: uppercase;
+        color: var(--primary);
+        font-weight: bold;
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1028px) {
+    .header-bar__left {
+        & img {
+            display: block;
+        }
+
+        & p {
+            display: flex;
+        }
+    }
+}
+
+.header-bar__middle {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.header-bar__navigation {
+    display: flex;
+    gap: 1rem;
+    & a {
+        background-color: var(--background);
+        padding: 0.25rem 1rem;
+        border-radius: 0.25rem;
+
+        &:hover {
+            background-color: var(--accent);
+
+            & img {
+                filter: invert();
+            }
+        }
+    }
+}
+
+.header-bar__right {
+    display: flex;
+    width: 100%;
+    justify-content: right;
+
+    & a {
+        display: none;
+        margin-right: 1rem;
+    }
+}
+
+@media screen and (min-width: 1028px) {
+    .header-bar__right {
+        & a {
+            display: block;
+        }
+    }
+}
+
+/* Main */
+
+/* Main profile */
+.main-profile {
+    display: flex;
+    width: 90%;
+    max-width: 425px;
+    margin: auto;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 1rem;
+    border-bottom: 1px solid var(--separator);
+
+    & img {
+        width: 35vw;
+        max-width: 192px;
+        align-self: center;
+        border-radius: 100%;
+        border: 2px solid var(--accent);
+    }
+
+    & p {
+        text-align: center;
+        font-family: "Montserrat", sans-serif;
+        color: var(--text);
+        font-size: 1rem;
+    }
+}
+.main-profile__gimmick-greet {
+    color: var(--text);
+    font-family: monospace;
+}
+.main-profile__descriptor {
+    color: var(--accent);
+    font-weight: 500;
+}
+
+/* Main skills */
+.main-skills {
+    display: flex;
+    width: 90%;
+    max-width: 425px;
+    margin: auto;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--separator);
+
+    & p {
+        text-align: center;
+        font-family: "Montserrat", sans-serif;
+        color: var(--text);
+        font-size: 2rem;
+        font-weight: 500;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    & section {
+        & p {
+            font-weight: normal;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+        }
+
+        & section {
+            border-radius: 1rem;
+            padding: 1rem;
+            box-sizing: border-box;
+            border: 1px solid var(--separator);
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            row-gap: 1rem;
+
+            & img {
+                width: 64px;
+
+                &:hover {
+                    scale: 1.15;
+                }
+            }
+        }
+    }
+}
+
+/* Main projects */
+.main-projects {
+    display: flex;
+    width: 90%;
+    max-width: 425px;
+    margin: auto;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--separator);
+
+    & p {
+        text-align: center;
+        font-family: "Montserrat", sans-serif;
+        color: var(--text);
+        font-size: 2rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+        margin-top: 0;
+    }
+
+    & section {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        & div {
+            display: flex;
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--separator);
+            box-sizing: border-box;
+            border-radius: 1rem;
+
+            & section {
+                display: flex;
+                width: 100%;
+                align-content: center;
+
+                & span {
+                    display: flex;
+
+                    & img {
+                        width: 64px;
+                    }
+                }
+
+                & a {
+                    text-align: right;
+
+                    & img {
+                        width: 2rem;
+                        margin: 0;
+                        padding: 0;
+                        filter: invert();
+                    }
+                }
+            }
+
+            & p {
+                text-align: left;
+                font-size: 1rem;
+                font-weight: 400;
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        #latest_entry {
+            border: 1px solid var(--accent);
+
+            & section {
+                & p {
+                    &::after {
+                        content: "LATEST";
+                        margin-left: 0.5rem;
+                        font-size: 0.5rem;
+                        font-weight: 300;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*  */
+.dropdown {
+  position: relative;
+  width: 250px;
+}
+
+.dropdown-btn {
+  padding: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  border: 1px solid #ccc;
+  width: 100%;
+  background: white;
+}
+
+.dropdown-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background: #f0f0f0;
+}
