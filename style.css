@@ -317,3 +317,20 @@ body {
 .dropdown-item:hover {
   background: #f0f0f0;
 }
+
+/*  */
+
+.main-profile__balandis {
+    margin: 0;
+    background-color: var(--separator);
+    padding: 1rem;
+    border-radius: 4rem;
+
+    & a {
+        font-size: 2rem;
+        font-weight: bold;
+        &:hover {
+            font-size: 2.5rem;
+        }
+    }
+}
