@@ -111,6 +111,10 @@ body {
             display: block;
         }
     }
+
+    #goto-button-dev {
+        display: none;
+    }
 }
 
 /* Main */

@@ -20,21 +20,3 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-function goBack() {
-    window.history.back();
-}
-
-const btn = document.querySelector(".dropdown-btn");
-const content = document.querySelector(".dropdown-content");
-const items = document.querySelectorAll(".dropdown-item");
-
-btn.addEventListener("click", () => {
-content.style.display = content.style.display === "block" ? "none" : "block";
-});
-
-items.forEach(item => {
-item.addEventListener("click", () => {
-    btn.textContent = item.querySelector("strong").textContent;
-    content.style.display = "none";
-});
-});
