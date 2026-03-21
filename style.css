@@ -130,7 +130,7 @@ body {
     margin-top: 1rem;
     border-bottom: 1px solid var(--separator);
 
-    & img {
+    & #main-profile__picture {
         width: 35vw;
         max-width: 192px;
         align-self: center;
