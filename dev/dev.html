@@ -5,16 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
     <title>Aurimukstis1.dev</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dev.css">
     <!-- Fonts importing -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script src="dev.js" defer></script>
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 </head>
 <body>
     <main>
-        <p>Welcome to the Dev section - Work in progress<br/>Check back later!</p>
+        <article class="dynamic-panel" id="introduction-panel">
+            <p id="accent-text-medium">Welcome to the Dev Section.</p>
+            <p>Here I will go a bit more in-depth on my projects</p>
+        </article>
+
+        <article class="dynamic-panel" id="nationwider-panel-1">
+            <section class="dynamic-panel-header">
+                <section class="dynamic-panel-header__left">
+                    <p id="accent-text-big">Nationwider</p>
+                    <p id="accent-text-small">C++ Version</p>
+                </section>
+                <section class="dynamic-panel-header__right">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" />
+                </section>
+            </section>
+            <p>The Nationwider tool rewritten in C++, using SDL3 as a graphics lib, 
+                with optional AWS integration for hosting savefiles.</p>
+            <p>You can read more about the concept at <a id="accent-text-small" href="https://www.nationwides.fyi/">nationwider.fyi</a></p>
+            <hr>
+            <p id="accent-text-big">Main Functionality</p>
+            <p>Now, the main Nationwider program relies on this hierarchy of layers.</p>
+            <img src="/assets/nationwidercppdiagram-.excalidraw.png" alt="">
+            <p>The layers consist of these types: <span id="accent-text-small">Terrain, Political, Icon.</span></p>
+            <p id="accent-text-medium">Terrain</p>
+            <p>Terrain layers can have the <b>"upper" or "lower"</b> trait which determines what level of detail the respective layer is at. Imagine it as the same system of "LODs" where the "upper" layer is a lower detail (thicker pixel) representation of what the higher detail layer would be.</p>
+            <p>As a simple example, imagine a country on a map being roughly 100 pixels in length, now in an "upper" layer, that would be, for example, 10 pixels in length. a 10:1 ratio if the chunks are 10 pixels wide. This can be adjusted with how big the host decides to make the chunks.</p>
+            <p id="accent-text-medium">Political</p>
+            <p>Political layers have only one size, the "upper" size - this is a design choice. It functions by creating a texture of one color, the "wilderness" representation, and then creating a second less-opaque texture on top to show where the water is, leaving visible blank landmasses. Now when you go and color the political layer, the layer automatically darkens the areas where you color onto water, representing occupied or enforced waters by a player.</p>
+            <p>The double-texture method also helps with making the saving process much easier by not having to lighten the color where it's on water to read and save as a color index byte.</p>
+            <p id="accent-text-medium">Icon</p>
+            <p>The Icon layer has no size, technically. It's simply a vector (or deque specifically) storing icon objects, which get looped through and rendered onto visible screen-space.</p>
+            <hr>
+            <p id="accent-text-big">AWS S3 Functionality</p>
+            <p>Minimal python scripts are used to check for a server key in a json file and then download a list of savefiles in the cloud (S3 buckets). Each host would have to set up their own S3 bucket to host the savefiles and make an API key for the users so they could download the maps, and only the host would have the API privilege to upload maps.</p>
+            <p>The main program calls to this executable to read the keys and list all savefiles into a shared text file.</p>
+            <img src="/assets/snippets/ABC001.png" alt="">
+            <p>In the main program you then go ahead and select a local or online savefile and if it's online, it calls to this script to download the selected savefile as a temporary and load it into the program.</p>
+            <img src="/assets/snippets/ABC002.png" alt="">
+            <p>Then in the case that the host is editing the map and decides to publish it to everyone to download, this script comes into play. And by passing an argument as a filename of the locally saved file, the python executable reads that argument as a filename, finds the referenced file, and uploads it to the S3 Bucket.</p>
+            <p>Based on the patience of the host, they can choose to either have one master API key for every user to use in the community, or create a separate API key for every single player.</p>
+            <img src="/assets/snippets/ABC003.png" alt="">
+        </article>
+
     </main>
 </body>

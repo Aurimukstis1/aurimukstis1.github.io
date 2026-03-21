@@ -1,0 +1,99 @@
+:root {
+    --background: #222222;
+    --dot-background: #101010;
+    --dot-foreground: #222222;
+    --primary: #C2D8C4;
+    --text: #FEFEFE;
+    --accent: #C5E384;
+    --layer1: #303030;
+    --layer2: #404040;
+    --layer3: #505050;
+}
+body {
+    background: var(--dot-background);
+    background-image: radial-gradient(var(--dot-foreground) 5%, transparent 0);
+    background-size: 35px 35px;
+
+    margin: 0;
+
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    color: var(--text);
+    font-size: 1rem;
+
+    * a {
+        text-decoration: none;
+        color: var(--text);
+    }
+}
+* {
+    transition: 0.25s all;
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.dynamic-panel {
+    box-sizing: border-box;
+    background-color: var(--layer1);
+    border-radius: 1rem;
+    display: flex;
+    width: 100%;
+    /* max-width: 425px; */
+    max-width: 768px;
+    padding: 0.5rem;
+    margin: auto;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+}
+.dynamic-panel-header {
+    display: flex;
+    flex-direction: row;
+}
+.dynamic-panel-header__left {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.dynamic-panel-header__right {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: end;
+
+    & img {
+        overflow: hidden;
+        max-width: 64px;
+    }
+}
+#accent-text-small {
+    color: var(--accent);
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+}
+#accent-text-medium {
+    color: var(--accent);
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+#accent-text-big {
+    color: var(--accent);
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* --- custom rulesets --- */
+
+#nationwider-panel-1 {
+    text-align: left;
+}
